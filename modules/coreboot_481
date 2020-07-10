@@ -1,4 +1,4 @@
-modules-$(CONFIG_COREBOOT) += coreboot
+modules-$(CONFIG_COREBOOT_481) += coreboot_481
 
 #coreboot_version := git
 #coreboot_repo := https://github.com/osresearch/coreboot
@@ -88,19 +88,19 @@ coreboot.saveconfig:
 # we must also download the coreboot-blobs tree
 ifneq "$(coreboot_version)" "git"
 
-coreboot_depends += coreboot-blobs
-modules-y += coreboot-blobs
+coreboot_depends += coreboot-blobs_481_481
+modules-y += coreboot-blobs_481_481
 
-coreboot-blobs_version := $(coreboot_version)
-coreboot-blobs_tar := coreboot-blobs-$(coreboot-blobs_version).tar.xz
-coreboot-blobs_tar_opt := --strip 3
-coreboot-blobs_dir := coreboot-$(coreboot-blobs_version)/3rdparty/blobs
-coreboot-blobs_url := https://www.coreboot.org/releases/$(coreboot-blobs_tar)
-coreboot-blobs_hash := 18aa509ae3af005a05d7b1e0b0246dc640249c14fc828f5144b6fd20bb10e295
+coreboot-blobs_481_version := $(coreboot_version)
+coreboot-blobs_481_tar := coreboot-blobs-$(coreboot-blobs_481_version).tar.xz
+coreboot-blobs_481_tar_opt := --strip 3
+coreboot-blobs_481_dir := coreboot-$(coreboot-blobs_481_version)/3rdparty/blobs
+coreboot-blobs_481_url := https://www.coreboot.org/releases/$(coreboot-blobs_481_tar)
+coreboot-blobs_481_hash := 18aa509ae3af005a05d7b1e0b0246dc640249c14fc828f5144b6fd20bb10e295
 
 ## there is nothing to build for the blobs, this should be
 ## made easier to make happen
-coreboot-blobs_output := .built
-coreboot-blobs_configure := echo -e 'all:\n\ttouch .built' > Makefile
+coreboot-blobs_481_output := .built
+coreboot-blobs_481_configure := echo -e 'all:\n\ttouch .built' > Makefile
 
 endif

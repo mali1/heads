@@ -130,7 +130,7 @@ CROSS_TOOLS := \
 
 
 
-ifeq "$(CONFIG_COREBOOT)" "y"
+ifeq "$(CONFIG_COREBOOT_481)" "y"
 all: $(build)/$(BOARD)/coreboot.rom
 else ifeq "$(CONFIG_LINUXBOOT)" "y"
 all: $(build)/$(BOARD)/linuxboot.rom
